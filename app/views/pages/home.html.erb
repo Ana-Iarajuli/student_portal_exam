@@ -1,0 +1,19 @@
+<style>
+    .home-content {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+  <div class="home-content">
+    <h1>Home page</h1>
+    <p>This is the page where you can request any subject you want.</p>
+    <p>Happy questing!</p>
+    <% if !user_signed_in? %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

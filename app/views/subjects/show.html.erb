@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Subject Details Card -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title text-center font-weight-bold"><%= @subject.title %></h2>
+          <p class="card-text text-center text-muted"><%= @subject.description %></p>
+          <!-- Display start and end times -->
+          <p class="card-text text-center">Start Time: <%= @subject.start_time.strftime("%H:%M") %></p>
+          <p class="card-text text-center">End Time: <%= @subject.end_time.strftime("%H:%M") %></p>
+          <p class="card-text text-center">Lecturer: <%= @subject.lecturer_id %></p>
+
+
+          <%# if current_user.admin? %>
+            <div class="text-center">
+              <%= link_to "Edit", edit_subject_path(@subject), class: "btn btn-outline-info me-2" %>
+              <%= link_to "Delete", subject_path(@subject), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <%= form_with(model: @subject, local: true) do |form| %>
+                <%= form.submit "Select", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          <%# end %>
+        </div>
+        <div class="card-footer text-muted text-center">
+          <small>Created <%= time_ago_in_words(@subject.created_at) %> ago, edited <%= time_ago_in_words(@subject.updated_at) %> ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

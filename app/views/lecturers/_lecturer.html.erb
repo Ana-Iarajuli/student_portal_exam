@@ -1,0 +1,12 @@
+<div class="row">
+  <% @lecturers.each do |lecturer| %>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Name: <%= lecturer.name %></h5>
+          <p class="card-text">Description: <%= lecturer.email %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

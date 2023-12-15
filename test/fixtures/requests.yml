@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_code: 1
+  date: 2023-12-15
+  subject: one
+  lecturer: one
+  selected_hours: 2023-12-15 12:38:15
+  actual_hours: 2023-12-15 12:38:15
+
+two:
+  request_code: 1
+  date: 2023-12-15
+  subject: two
+  lecturer: two
+  selected_hours: 2023-12-15 12:38:15
+  actual_hours: 2023-12-15 12:38:15

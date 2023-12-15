@@ -1,0 +1,19 @@
+<div class="row">
+  <% @subjects.each do |subject| %>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Name: <%= subject.title %></h5>
+          <p class="card-text">Description: <%= subject.description %></p>
+          <%# if subject.lecturer_id %>
+            <%#= link_to subject.lecturer_id.name, lecturer_path(subject.lecturer_id)%>
+<!--            <p class="card-text">Lecturer: <%#= @lecturer %></p>-->
+          <%# else %>
+<!--            <p class="card-text">Lecturer: Not Assigned</p>-->
+          <%# end %>
+          <a href="<%= subject_path(subject) %>" class="btn btn-primary">See More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h1>Add new lecturer</h1>
+      <%= form_with(model: @subject, local: true) do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, class: "form-label" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter lecturer name" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :email, class: "form-label" %>
+          <%= form.text_field :email, class: "form-control", placeholder: "Enter lecturer email" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :subject_id, class: "form-label" %>
+          <%= form.collection_select :subject_id, Subject.all, :id, :title, { prompt: "Select Subject" }, class: "form-select" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :start_time, class: "form-label" %>
+          <%= form.time_field :start_time, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :end_time, class: "form-label" %>
+          <%= form.time_field :end_time, class: "form-control" %>
+        </div>
+
+        <%= form.submit "Save", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
